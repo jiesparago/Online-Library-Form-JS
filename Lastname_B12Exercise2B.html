@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Exercise2A-B12.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@1,400;1,700&display=swap");
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+
+    <h1>Checkout Form</h1>
+    <table class="CheckForm" border="1px">
+      <form action="#" method="">
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" name="firstname" id="firstname" size="50" />
+          </td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><input type="text" name="Address" id="Address" size="50" /></td>
+        </tr>
+        <tr>
+          <td>Region:</td>
+          <td>
+            <select name="Location" id="Location" onchange="getLoc()">
+              <option value="--">--</option>
+              <option value="NCR">NCR</option>
+              <option value="Fairview">Fairview</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Contact Number</td>
+          <td><input type="text" name="Cnumber" id="Cnumber" size="50" /></td>
+        </tr>
+        <tr>
+          <td>Payment Method</td>
+          <td>
+            <input
+              type="radio"
+              name="Paymet"
+              id="cod"
+              value="Cash on Delivery"
+            />
+            <label for="COD">Cash on Delivery</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" name="Paymet" id="mc" value="Master Card" />
+            <label for="MC">Master Card</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" name="Paymet" id="visa" value="VISA" />
+            <label for="VISA">VISA</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input
+              type="radio"
+              name="Paymet"
+              id="Ae"
+              value="American Express"
+            />
+            <label for="AE">American Express</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              onclick="getMethod()"
+            >
+              Checkout
+            </button>
+          </td>
+        </tr>
+      </form>
+    </table>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3>Full Name: <span id="displayName"></span></h3>
+            <h3>Address: <span id="displayAdd"></span></h3>
+            <h3>Location: <span id="displayLoc"></span></h3>
+            <h3>Contact #: <span id="displayNum"></span></h3>
+            <h3>Payment Method: <span id="displaypMet"></span></h3>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function getMethod() {
+        let fullName = document.getElementById("firstname").value;
+        let Add = document.getElementById("Address").value;
+        let conNum = document.getElementById("Cnumber").value;
+        document.getElementById("displayName").innerHTML = fullName;
+        document.getElementById("displayAdd").innerHTML = Add;
+        document.getElementById("displayNum").innerHTML = conNum;
+        document.getElementById("displaypMet").innerHTML = getRadio();
+      }
+
+      function getLoc() {
+        let Loc = document.getElementById("Location").value;
+        document.getElementById("displayLoc").innerHTML = Loc;
+      }
+
+      function getRadio() {
+        let a = document.querySelector("input[name='Paymet']:checked").value;
+        return a;
+      }
+    </script>
+  </body>
+</html>

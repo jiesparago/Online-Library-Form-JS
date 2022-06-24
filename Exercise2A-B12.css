@@ -1,0 +1,63 @@
+body{
+    font-family: 'Gentium Plus', serif;
+    /* background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed; */
+}
+h1{
+    font-size: 300%;
+    text-align: center;
+    color: white;
+    background-color: grey;
+}
+/* 
+.overlay{
+    background-color:rgba(0,0,0,0.5);
+    opacity: 70%;
+} */
+
+.FilterSearch{
+    
+    float:left;
+    margin-left:245px;
+    margin-top: 50px;
+}
+.HotelBooking{
+/* border: 5px solid black;
+border-style:hidden; */
+margin-left: auto;
+margin-right: auto;
+}
+.HotelBooking th{
+    border: 1px solid;
+    
+}
+
+.CheckForm{
+    border: 5px solid black;
+border-style:hidden;
+margin-left: auto;
+margin-right: auto;
+}
+
+thead{
+    text-align: center;
+}
+.TrBg:hover{
+  background-color:rgb(211, 205, 205);
+  color: black;
+  font-style:italic;
+ 
+}
+.tddata{
+ text-align: center;   
+}
+
+.Buttons:hover {
+    color: blue;
+    font-style: oblique;
+  }
+
+.SubmitButton{
+    margin-left:245px;
+    }
